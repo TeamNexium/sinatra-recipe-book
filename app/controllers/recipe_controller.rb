@@ -12,11 +12,26 @@ class RecipeController < Sinatra::Base
 
   get '/recipes' do
   	if logged_in?
-  	erb :'recipes/index'
-  end
+  		erb :'recipes/index'
+  	else
+  		redirect '/login'
+  	end
   end
 
   get '/recipes/new' do
-  	erb :new
+  	if logged_in?
+  		erb :'recipes/new'
+  	else 
+  		redirect '/login'
+  	end
+  end
+
+  post '/recipes' do
+  	@recipe = Recipe.new(name: params["recipe_name"], ingredients: params["ingredients"], instructions: params["instructions"])
+  	if @recipe.save
+  		redirect '/recipes'
+  	else
+  		redirect "recipes/new"
+  	end
   end
 end
