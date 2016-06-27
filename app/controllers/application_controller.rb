@@ -1,6 +1,8 @@
 require './config/environment'
+require './app/helpers/helper_methods'
 
 class ApplicationController < Sinatra::Base
+	include HelperMethods
 
   configure do
     set :views, 'app/views'
@@ -9,7 +11,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-  	erb :homepage
+  	if logged_in?
+  		redirect '/recipes'
+  	else
+  		erb :homepage
+  	end
   end
 
   get '/login' do
@@ -24,7 +30,7 @@ class ApplicationController < Sinatra::Base
   	@user = User.find_by(username: params[:username])
 	if @user && @user.authenticate(params[:password])
 		session[:user_id] = @user.id
-  		
+ 		redirect to '/recipes'
   	else
   	 	session[:error] = "Something went wrong"
   	 	redirect to '/login'
@@ -42,16 +48,6 @@ class ApplicationController < Sinatra::Base
   	else 
   		session[:error] = "Something went wrong. Please make sure to fill in all the fields"
   		redirect '/signup'
-  	end
-  end
-
-  helpers do
-  	def logged_in?
-  		!!session[:user_id]
-  	end
-
-  	def current_user
-  		user = User.find(session[:user_id])
   	end
   end
 
