@@ -27,7 +27,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/login' do
-  	@user = User.find_by(username: params[:username])
+  @user = User.find_by(username: params[:username])
 	if @user && @user.authenticate(params[:password])
 		session[:user_id] = @user.id
  		redirect to '/recipes'
@@ -46,7 +46,7 @@ class ApplicationController < Sinatra::Base
   	if @user.save
   		redirect '/recipes'
   	else 
-  		session[:error] = "Something went wrong. Please make sure to fill in all the fields"
+  		session[:error] = "Something went wrong. Please make sure to fill in all the fields."
   		redirect '/signup'
   	end
   end

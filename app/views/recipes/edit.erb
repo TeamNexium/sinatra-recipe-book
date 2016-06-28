@@ -1,11 +1,10 @@
-<h1>Hooray! You are about to create a new recipe.</h1>
-<form action="/recipes" method="post">
+<form action="/recipes/<%=@recipe.id%>" method="post">
 	<p>Give your new recipe a <b>name</b>:</p>
-	<p><input type="text" name="recipe_name" size=52></p>
+	<p><input type="text" name="recipe_name" size=52 value="<%=@recipe.name%>"></p>
 	<p>List the <b>ingredients</b> needed:</p>
-	<p><textarea name="ingredients" cols=50 rows=5></textarea></p>
+	<p><textarea name="ingredients" cols=50 rows=5><%=@recipe.ingredients%></textarea></p>
 	<p>Provide cooking <b>instructions</b>:</p>
-	<p><textarea name="instructions" cols=50 rows=10></textarea></p>
-	<button value="submit">Create New Recipe!</button>
+	<p><textarea name="instructions" cols=50 rows=10><%=@recipe.instructions%></textarea></p>
+	<button value="submit">Save</button>
 </form>
 

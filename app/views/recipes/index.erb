@@ -1,9 +1,5 @@
 <h1>Browse all Cook Book Nook recipes here!</h1>
 <%Recipe.all.each do |recipe|%>
-<h2><%=recipe.name%></h2>
-<p><b>Ingredients:</b> </p>
-<p><%=recipe.ingredients%></p>
-<p><b>Cooking instructions:</b></p>
-<p><%=recipe.instructions%></p>
+<p><a href="/recipes/<%=recipe.id%>"><%=recipe.name%></a></p>
 <%end%>
 <a href="/logout"><button>Log Out</button></a>
