@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20160625022307) do
     t.text    "ingredients"
     t.text    "instructions"
     t.integer "user_id"
+    t.string  "picture"
   end
 
   create_table "users", force: :cascade do |t|

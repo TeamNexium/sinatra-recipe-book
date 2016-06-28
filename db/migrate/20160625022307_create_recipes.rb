@@ -5,6 +5,7 @@ class CreateRecipes < ActiveRecord::Migration
   		t.text :ingredients
   		t.text :instructions
   		t.integer :user_id
+  		t.string :picture
   	end
   end
 end
