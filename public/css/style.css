@@ -1,27 +1,85 @@
+
+
 body{
-  font-size: 100%;
+	text-align: center;
+	font-size: 100%;
+	font-family: 'Open Sans', sans-serif;
 }
-input, textarea {
-  display: block;
-  width: 100%;
-  padding: 5px;
-  margin-bottom: 5px;
-  box-shadow: 0 3px 5px #ccc;
-  border: 1px solid #ccc;
+
+
+.intro{
+	width: 50%;
+	display: inline-block;
+	color: white;
+	background: black;
+}
+.wrapper{
+	display: inline-block;
+	margin-top: 20px;
+	width: 30%;
+}
+.item{
+	float: left;
+}
+.item2{
+	display: block;
+	position: relative;
+    left: 10px;
+	text-align: left;
+	
+
+}
+
+
+h1{
+	font-weight: bold;
+}
+
+h3{
+	font-weight: normal;
+}
+input, textarea { 
+	width: 30%;
+	padding: 5px;
+	margin-bottom: 5px;
+	box-shadow: 0 3px 5px #ccc;
+	border: 1px solid #ccc;
 }
 
 input[type="submit"] {
-  margin-top: 5px;
-  width: 100px;
-  background: black;
-  color: white;
-  border-radius: 25px;
-  border: 0;
+	margin-top: 5px;
+	width: 100px;
+	background: black;
+	color: white;
+	border-radius: 25px;
+	border: 0;
 }
 
 input[type="submit"]:hover {
-  background: #555;
+	background: #555;
 }
+
+button {
+	background-color: red; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.logout {
+	background-color: black; 
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;}
+
+
 
 /*////////// BACKGROUNDS //////////*/
 .white-wood {
