@@ -32,8 +32,17 @@ class RecipeController < Sinatra::Base
   	post '/recipes' do
   		@recipe = Recipe.new(name: params["recipe_name"], ingredients: params["ingredients"], instructions: params["instructions"])
   		@recipe.user = current_user
+      if params[:file]
+        filename = params[:file][:filename]
+        file = params[:file][:tempfile]
+        File.open("./public/images/#{filename}", 'wb') do |f|
+          f.write(file.read)
+        end
+        @recipe.picture = filename
+      end
+
   		if @recipe.save
-  			redirect '/recipes'
+  			redirect "/recipes/#{@recipe.id}"
   		else
   			redirect "/recipes/new"
   		end
@@ -51,7 +60,15 @@ class RecipeController < Sinatra::Base
   	post '/recipes/:id' do
   		@recipe = Recipe.find_by(id: params[:id])
   		@recipe.update(name: params["recipe_name"], ingredients: params["ingredients"], instructions: params["instructions"])
-  		if @recipe.save
+  		if params[:file]
+        filename = params[:file][:filename]
+        file = params[:file][:tempfile]
+        File.open("./public/images/#{filename}", 'wb') do |f|
+          f.write(file.read)
+        end
+        @recipe.picture = filename
+      end
+      if @recipe.save
   			redirect "/recipes/#{params[:id]}"
   		else
   			redirect "/recipes/#{params[:id]}/edit"

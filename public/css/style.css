@@ -1,0 +1,30 @@
+body{
+  font-size: 100%;
+}
+input, textarea {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 5px;
+  box-shadow: 0 3px 5px #ccc;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+  margin-top: 5px;
+  width: 100px;
+  background: black;
+  color: white;
+  border-radius: 25px;
+  border: 0;
+}
+
+input[type="submit"]:hover {
+  background: #555;
+}
+
+/*////////// BACKGROUNDS //////////*/
+.white-wood {
+  background: url(../images/white-wood.jpg) no-repeat center top;
+  background-size: cover;
+}
