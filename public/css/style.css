@@ -26,8 +26,6 @@ body{
 	position: relative;
     left: 10px;
 	text-align: left;
-	
-
 }
 
 
@@ -41,26 +39,14 @@ h3{
 input, textarea { 
 	width: 30%;
 	padding: 5px;
-	margin-bottom: 5px;
+	margin-bottom: 0px;
 	box-shadow: 0 3px 5px #ccc;
 	border: 1px solid #ccc;
 }
 
-input[type="submit"] {
-	margin-top: 5px;
-	width: 100px;
-	background: black;
-	color: white;
-	border-radius: 25px;
-	border: 0;
-}
-
-input[type="submit"]:hover {
-	background: #555;
-}
-
 button {
 	background-color: red; 
+	transition: background-color 0.5s ease;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -69,7 +55,10 @@ button {
     display: inline-block;
     font-size: 16px;
 }
-.logout {
+button:hover{
+	 background-color: blue;
+}
+.small_button {
 	background-color: black; 
     border: none;
     color: white;
@@ -78,11 +67,13 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;}
-
-
+#red {
+	background-color: red;
+}
 
 /*////////// BACKGROUNDS //////////*/
-.white-wood {
+/*.white-wood {
   background: url(../images/white-wood.jpg) no-repeat center top;
   background-size: cover;
-}
+}*/
+/**/

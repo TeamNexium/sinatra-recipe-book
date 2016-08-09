@@ -5,12 +5,14 @@
 <p><b>Cooking instructions:</b></p>
 <p><%=@recipe.instructions%></p>
 <%if @recipe.user == @user%>
-<p><a href="/recipes/<%=@recipe.id%>/edit"><button>Edit</button></a> </p>
+
 <form action="/recipes/<%= @recipe.id %>/delete" method="post">
+<a href="/recipes/<%=@recipe.id%>/edit"><button class="small_button" id="red">Edit</button></a>
 	<input id="hidden" type="hidden" name="_method" value="delete">
-	<button value="delete">Delete</button>
+	<button value="delete" class="small_button" id="red">Delete</button>
 </form>
 <%else%>
 <p>This recipe was created by <a href="/users/<%=@recipe.user.slug%>"><%=@recipe.user.username%></a></p>
 <%end%>
-<a href="/recipes"><button>Home Page</button></a>
+<br>
+<a href="/recipes"><button class="small_button">Home Page</button></a>
