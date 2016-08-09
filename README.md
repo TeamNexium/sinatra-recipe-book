@@ -1,5 +1,4 @@
 # sinatra-recipe-book
-Recipe Book
 
 For this assignment I have decided to build an app called “Cook Book Nook” for sharing recipes between the users of the app.
 
